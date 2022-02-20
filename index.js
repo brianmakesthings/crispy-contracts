@@ -60,14 +60,14 @@ app.post('/getBalance', async(req, res) => {
 
 app.post('/uploadVoiceClip', upload.single("audio_data"), async(req, res) => {
     // adapted from https://stackoverflow.com/questions/67229656/how-to-record-mic-from-client-then-send-to-server
-    // let result = await transcribeAudio(req.file.path);
-    // console.log(result);
-    // let parsedData = await parseLoanDetails(result.text);
-    // console.log(parsedData);
+    let result = await transcribeAudio(req.file.path);
+    console.log(result);
+    let parsedData = await parseLoanDetails(result.text);
+    console.log(parsedData);
     // const sleep = time => new Promise(resolve => setTimeout(resolve, time));
     // await sleep(5);
 
-    let parsedData = "{\"name\":\"John\",\"amount\": 50, \"duration\": 9, \"interest\": 5.0}";
+    // let parsedData = "{\"name\":\"John\",\"amount\": 50, \"duration\": 9, \"interest\": 5.0}";
     parsedData = JSON.parse(parsedData);
     console.log(parsedData);
     // res.redirect(200, "/contract?=" + parsedData);

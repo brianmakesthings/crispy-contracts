@@ -18,7 +18,6 @@ var yesBtn = document.getElementById("yes");
 var submit = document.getElementById("submitBtn");
 
 submit.onclick = function() {
-    console.log("test");
     modal.style.display = "block";
 }
 

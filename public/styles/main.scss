@@ -55,6 +55,13 @@ main {
         font-family: $rubik;
         color: $textColor;
     }
+    .initially_hidden {
+        display: none;
+    }
+    #btnplay {
+        background-color: $textColor;
+        color: $buttonBackground;
+    }
 }
 
 .image {

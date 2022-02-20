@@ -4,6 +4,7 @@ const seconds = document.querySelector(".seconds");
 let time_desc = document.getElementsByClassName("small_font")[0];
 let error = document.getElementsByClassName("error_msg")[0];
 let label = document.getElementById("label");
+let hideshow = document.getElementsByClassName("initially_hidden")[0];
 
 let timerTime = 0;
 let timer_status = 0;
@@ -42,6 +43,7 @@ const recordAudio = () =>
                 timer();
                 timer_status = 0;
                 clearInterval(interval);
+                hideshow.style.display = "block";
                 time_desc.innerText = "CLICK TO RE-RECORD OR YOU CAN SUBMIT BELOW";
             });
 

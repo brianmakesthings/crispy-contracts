@@ -202,6 +202,15 @@ main a {
   color: #fbfbfb;
 }
 
+main .initially_hidden {
+  display: none;
+}
+
+main #btnplay {
+  background-color: #fbfbfb;
+  color: #453be7;
+}
+
 .image {
   position: relative;
 }

@@ -107,13 +107,13 @@ let paybackLoan = async(
     console.log(lenderAccountId);
     let borrowerId = db[borrowerAccountId];
     let lenderId = db[lenderAccountId];
-    let value = amount.replace(/\D/g, "");
+    let value = parseInt(amount.replace(/\D/g, "")) / 100;
     let interest = parseFloat(interestRate.replace(/\D.\D/g, "")) / 100;
 
     console.log(borrowerId, lenderId, value, interest);
     // super simple interest
     let total = value * (1 + interest);
-    await transferHbar(value, lenderId, total);
+    await transferHbar(total, lenderId, borrowerId);
 }
 
 let generateLoan = async(
@@ -126,10 +126,10 @@ let generateLoan = async(
 ) => {
     // generate a Solidity contract, compile it, and return a json
     let db = require("./people.json");
-    console.log(lenderAccountId);
+    console.log(amount);
     let borrowerId = db[borrowerAccountId];
     let lenderId = db[lenderAccountId];
-    let value = amount.replace(/\D/g, "");
+    let value = parseInt(amount.replace(/\D/g, "")) / 100;
     let interest = parseFloat(interestRate.replace(/\D.\D/g, "")) / 100;
 
     console.log(borrowerId, lenderId, value, interest);
@@ -138,7 +138,12 @@ let generateLoan = async(
     // return;
 
     // initial loan
-    await transferHbar(value, lenderId, borrowerId);
+    try {
+        await transferHbar(value, lenderId, borrowerId);
+    } catch (err) {
+        console.error(err);
+    }
+
 
     // const returnTransaction = new TransferTransaction()
     //     .addHbarTransfer(borrowerId, Hbar.fromTinybars(-total))

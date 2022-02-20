@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/record.css">
-    <link rel="stylesheet" href="../styles/loader.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/record.css" />
+    <link rel="stylesheet" href="../styles/loader.css" />
+    <link rel="icon" href="../images/favicon.ico">
     <script src="../scripts/record.js" defer></script>
     <title>Atlas</title>
 </head>
@@ -30,11 +31,20 @@
     </nav>
     <main>
         <h2>Hi, there.</h2>
-        <p>Record a short message below within one minute. Include your name, the name of the other party, amount of money, currency, interest rate and due date.</p>
+        <p>
+            Record a short message below within one minute. Include your name, the name of the other party, amount of money, currency, interest rate and due date.
+        </p>
         <p class="example">Example message:</p>
-        <p class="example_desc"><span>Samantha</span> can borrow <span>2000 hbar</span> for a <span>year</span> at <span>2.45%</span> interest.</p>
+        <p class="example_desc">
+            <span class="span">Samantha</span> can borrow
+            <span class="span">2000 hbar</span> for a
+            <span class="span">year</span> at
+            <span class="span">2.45%</span> interest.
+        </p>
         <!-- button here -->
-        <p class="error_msg">*Error: Your message exceeds the 60 seconds limit, please click the record button again to re-record your message.</p>
+        <p class="error_msg">
+            *Error: Your message exceeds the 60 seconds limit, please click the record button again to re-record your message.
+        </p>
         <div class="recording_bar">
             <p class="time">
                 <span class="minutes">00</span>:<span class="seconds">00</span>
@@ -50,11 +60,17 @@
             <label for="record" id="label"></label>
         </div>
         <p class="small_font">CLICK TO RECORD</p>
-        <button onclick="audio.play()">Play Recording</button>
-        <button onclick="sendBlob()">Submit</button>
+        <div class="initially_hidden">
+            <button onclick="audio.play()">
+          Play Recording
+        </button>
+            <button onclick="sendBlob()">
+          Submit
+        </button>
+        </div>
     </main>
     <div class="image">
-        <img class="dogcoin" src="../images/dogcoin.png" alt="coin">
+        <img class="dogcoin" src="../images/dogcoin.png" alt="coin" />
     </div>
     <footer>
         <p>Copyright Atlas &#169; 2022</p>
